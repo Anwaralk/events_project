@@ -9,7 +9,7 @@ class User(models.Model):
     last_name = models.CharField(max_length = 50)
     username = models.CharField(max_length = 50)
     email = models.CharField(max_length = 50)
-    # user_field = models.IntegerField(primary_key = True)
+    user_field = models.IntegerField(primary_key = True)
 
 
     def __str__(self):
@@ -25,7 +25,7 @@ class Event(models.Model):
     event_description = models.TextField()
     event_pk = models.IntegerField(primary_key = True)
     # ADD A PICTURE FOR EVENT LATER
-    # user_field = models.ForeignKey(User, on_delete= models.CASCADE, related_name='events')
+    user_field = models.ForeignKey(User, on_delete= models.CASCADE, related_name='events')
 
     def __str__(self):
         return self.event_name, self.event_date
