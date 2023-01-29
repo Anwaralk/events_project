@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ n.name }}</h5>
+      <h5 class="card-title">Happening on: {{ n.date }}</h5>
+      <p class="card-text">{{ n.description }}</p>
+      <a href="./DALL·E 2023-01-29 12.38.44 - a cover for an announcement post of a white female pianist sitting on the piano.png" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  {% endblock content %}
