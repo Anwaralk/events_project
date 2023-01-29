@@ -11,6 +11,7 @@ def get_index(request):
             'event_name': n.event_name,
             'event_date': n.event_date,
             'event_description': n.event_description,
+            'event_pk': n.event_pk,
         })
 
     context = {'all_events': events_list}
@@ -25,4 +26,4 @@ def get_event_detail(request, event_pk):
         'event_detail': queryset
     }
 
-    return render(request, 'event_detail', context)
+    return render(request, 'event_detail.html', context)

@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models import Model
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
 
 class User(models.Model):
@@ -30,8 +31,9 @@ class Event(models.Model):
         return self.event_name, self.event_date
 
 class Booking(models.Model):
-    # available_seats = DO LATER
+    # available_seats = ??
     booking_pk = models.IntegerField(primary_key = True)
-    # event_field = models.ForeignKey(Event, on_delete= models.CASCADE, related_name='bookings')
-    # user_field = models.ForeignKey(User, on_delete= models.CASCADE, related_name='events')
-    
+    event_field = models.ForeignKey(Event, on_delete= models.CASCADE, related_name='bookings')
+    user_field = models.ForeignKey(User, on_delete= models.CASCADE, related_name='events')
+    booking_date = models.DateField()
+
