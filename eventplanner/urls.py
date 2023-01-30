@@ -18,11 +18,14 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from events import views
+from user.views import register_view
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.get_index),
+    path('user/register/', register_view),
     # path('event_detail/<int:event_pk>/', views.get_event_detail),
 ]
 
